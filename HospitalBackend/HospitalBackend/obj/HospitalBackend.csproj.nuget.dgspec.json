@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CHAVEZG\\Desktop\\CrudHospitalDaimler-Gerardo\\HospitalBackend\\HospitalBackend\\HospitalBackend.csproj": {}
+    "C:\\Source\\Repos\\CrudHospitalDaimler\\HospitalBackend\\HospitalBackend\\HospitalBackend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CHAVEZG\\Desktop\\CrudHospitalDaimler-Gerardo\\HospitalBackend\\HospitalBackend\\HospitalBackend.csproj": {
+    "C:\\Source\\Repos\\CrudHospitalDaimler\\HospitalBackend\\HospitalBackend\\HospitalBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CHAVEZG\\Desktop\\CrudHospitalDaimler-Gerardo\\HospitalBackend\\HospitalBackend\\HospitalBackend.csproj",
+        "projectUniqueName": "C:\\Source\\Repos\\CrudHospitalDaimler\\HospitalBackend\\HospitalBackend\\HospitalBackend.csproj",
         "projectName": "HospitalBackend",
-        "projectPath": "C:\\Users\\CHAVEZG\\Desktop\\CrudHospitalDaimler-Gerardo\\HospitalBackend\\HospitalBackend\\HospitalBackend.csproj",
+        "projectPath": "C:\\Source\\Repos\\CrudHospitalDaimler\\HospitalBackend\\HospitalBackend\\HospitalBackend.csproj",
         "packagesPath": "C:\\Users\\CHAVEZG\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CHAVEZG\\Desktop\\CrudHospitalDaimler-Gerardo\\HospitalBackend\\HospitalBackend\\obj\\",
+        "outputPath": "C:\\Source\\Repos\\CrudHospitalDaimler\\HospitalBackend\\HospitalBackend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\CHAVEZG\\AppData\\Roaming\\NuGet\\NuGet.Config",

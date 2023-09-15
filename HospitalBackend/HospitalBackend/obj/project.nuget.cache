@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FjqAf75YhaoYSDHnPgbJfuVbAzZilL/6F7oCKdqRQRKjMbhQKDpL8FUNXMO0/GJJjYxfX9w8ghAD3BtGcwXKrA==",
+  "dgSpecHash": "74cXDvpr9CL0fZ4t2RpDnqDn9YRPzZA2jr8tgisWhCRCRX2nMNMHvjkTFlYQeR3CYNWcnWlEry4yEEY+HByh9Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\CHAVEZG\\Desktop\\CrudHospitalDaimler-Gerardo\\HospitalBackend\\HospitalBackend\\HospitalBackend.csproj",
+  "projectFilePath": "C:\\Source\\Repos\\CrudHospitalDaimler\\HospitalBackend\\HospitalBackend\\HospitalBackend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\CHAVEZG\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\CHAVEZG\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
