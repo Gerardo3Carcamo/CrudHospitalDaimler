@@ -8,7 +8,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  private REST_API_SERVER = "https://localhost:7110/";
+  private REST_API_SERVER = "https://localhost:7110/api/";
 
   async GetMethod(path: string) {
     try {

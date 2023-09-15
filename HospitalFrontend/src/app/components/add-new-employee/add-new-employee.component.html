@@ -22,15 +22,16 @@
             </div>
             <div class="field col-4">
                 <label>Ingrese rol que desempeñará:</label>
-                <input type="text" pInputText formControlName="role"/>
+                <p-dropdown [options]="roles.data"
+                placeholder="Seleccione un rol"
+                optionLabel="name"
+                optionValue="id"
+                formControlName="role"></p-dropdown>
             </div>
-            <div class="field col-4">
-                <label>Seleccione área a la que pertenecerá:</label>
-                <input type="text" pInputText formControlName="area"/>
-            </div>
-            <div class="field col-8"></div>
-            <div class="field col-4">
+            <div class="field col-12">
+                <label></label>
                 <p-button 
+                class="pt-6"
                 styleClass="p-button-success" 
                 label="Guardar registro" 
                 icon="pi pi-save" 

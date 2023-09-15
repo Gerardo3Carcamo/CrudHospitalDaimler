@@ -20,6 +20,7 @@ namespace HospitalBackend.Controllers
             try
             {
                 _context.Add(data);
+                
                 await _context.SaveChangesAsync();
                 return Ok(new { data = true, error = false, msg = "Ok", apiName = "saveNewEmployee" });
             }
@@ -29,18 +30,81 @@ namespace HospitalBackend.Controllers
             }
 
         }
-
-        [HttpGet]
-        public async Task<ActionResult> GetEgressDataAsync()
+        [HttpPost]
+        public ActionResult UpdateEmployee(Employee data)
         {
             try
             {
-                var result = await _context.Employees.Include(x => x.Role).Where(x => x.RoleId == 1 && x.isActive == 1).ToListAsync();
-                return Ok(new { apiName = "GetEgressData", error = false, msg = "Ok", data = result });
+                var employee = _context.Employees.Where(x => x.Id == data.Id).FirstOrDefault();
+                if (employee != null)
+                {
+                    employee.PhoneNumber = data.PhoneNumber;
+                    employee.Email = data.Email;
+                }
+                _context.Update(employee);
+                _context.SaveChanges();
+                return Ok(new { data = true, error = false, msg = "Ok", apiName = "UpdateEmployee" });
             }
             catch (Exception ex)
             {
-                return Ok(new { error = true, msg = ex.Message, apiName = "GetEgressData" });
+                return Ok(new { data = false, error = true, msg = ex.Message, apiName = "UpdateEmployee" });
+            }
+        }
+        [HttpPost]
+        public ActionResult DeleteEmployee(Employee data)
+        {
+            try
+            {
+                var employee = _context.Employees.Where(x => x.Id == data.Id).FirstOrDefault();
+                if (employee != null)
+                {
+                    _context.Remove(employee);
+                    _context.SaveChanges();
+                }
+                return Ok(new { data = true, error = false, msg = "Ok", apiName = "DeleteEmployee" });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { data = false, error = true, msg = ex.Message, apiName = "DeleteEmployee" });
+            }
+        }
+        [HttpGet]
+        public async Task<ActionResult> GetAllEmployees()
+        {
+            try
+            {
+                var result = await _context.Employees.Include(x => x.Role).ToListAsync();
+                return Ok(new { apiName = "GetAllEmployee", error = false, msg = "Ok", data = result });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { error = true, msg = ex.Message, apiName = "GetAllEmployee" });
+            }
+        }
+        [HttpPost]
+        public async Task<ActionResult> GetSpecificEmployee(Employee data)
+        {
+            try
+            {
+                var result = await _context.Employees.Include(x=> x.Role).Where(x=> x.Id == data.Id).ToListAsync();
+                return Ok(new { apiName = "GetSpecificEmployee", error = false, msg = "Ok", data = result });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { error = true, msg = ex.Message, apiName = "GetSpecificEmployee" });
+            }
+        }
+        [HttpGet]
+        public async Task<ActionResult> GetAllAreas()
+        {
+            try
+            {
+                var result = await _context.Roles.ToListAsync();
+                return Ok(new { apiName = "GetAllAreas", error = false, msg = "Ok", data = result });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { error = true, msg = ex.Message, apiName = "GetAllAreas" });
             }
         }
     }

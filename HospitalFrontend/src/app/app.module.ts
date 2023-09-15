@@ -19,6 +19,9 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { TableModule } from 'primeng/table';
 import { TooltipModule } from 'primeng/tooltip';
 import { HttpClientModule } from '@angular/common/http';
+import { DropdownModule } from 'primeng/dropdown';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -43,7 +46,9 @@ import { HttpClientModule } from '@angular/common/http';
     InputNumberModule,
     TableModule,
     TooltipModule,
-    HttpClientModule
+    HttpClientModule,
+    DropdownModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
