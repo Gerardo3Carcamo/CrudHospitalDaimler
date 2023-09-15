@@ -1,0 +1,42 @@
+<form [formGroup]="formControl">
+    <div class="card border-dark mb-3 px-4">
+        <div class="card-title text-center">
+            <h2>Nuevo ingreso de empleado</h2>
+        </div>
+        <div class="p-fluid p-formgrid grid">
+            <div class="field col-4">
+                <label>Ingrese nombre:</label>
+                <input type="text" pInputText formControlName="name"/>
+            </div>
+            <div class="field col-4">
+                <label>Ingrese apellidos:</label>
+                <input type="text" pInputText formControlName="lastName"/>
+            </div>
+            <div class="field col-4">
+                <label>Ingrese número de telefono:</label>
+                <input type="text" pInputText formControlName="phoneNumber"/>
+            </div>
+            <div class="field col-4">
+                <label>Ingrese correo electronico:</label>
+                <input type="text" pInputText formControlName="email"/>
+            </div>
+            <div class="field col-4">
+                <label>Ingrese rol que desempeñará:</label>
+                <input type="text" pInputText formControlName="role"/>
+            </div>
+            <div class="field col-4">
+                <label>Seleccione área a la que pertenecerá:</label>
+                <input type="text" pInputText formControlName="area"/>
+            </div>
+            <div class="field col-8"></div>
+            <div class="field col-4">
+                <p-button 
+                styleClass="p-button-success" 
+                label="Guardar registro" 
+                icon="pi pi-save" 
+                (onClick)="saveNewEmployee()"
+                [disabled]="!formControl.valid"></p-button>
+            </div>
+        </div>
+    </div>
+</form>

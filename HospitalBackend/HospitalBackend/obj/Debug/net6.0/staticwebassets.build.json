@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "PSE4SQlHoLKXQ3CVXpoDn4HnAGNI3ylQmbIVXbZTCtI=",
+  "Source": "HospitalBackend",
+  "BasePath": "_content/HospitalBackend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

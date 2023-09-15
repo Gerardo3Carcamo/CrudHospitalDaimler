@@ -1,0 +1,30 @@
+<p-tabView>
+    <p-tabPanel header="Información General">
+        <div class="p-fluid p-formgrid grid">
+            <div class="field col-6">
+                <p-card header="Ingreso de nuevos empleados por mes">
+                    <p-chart type="bar" [data]="dataNewEmployee" [options]="basicOptions"></p-chart>
+                </p-card>
+            </div>
+            <div class="field col-6">
+                <p-card header="Egreso de empleados por mes">
+                    <p-chart type="bar" [data]="dataNewEmployee" [options]="basicOptions"></p-chart>
+                </p-card>
+            </div>
+        </div>
+    </p-tabPanel>
+    <p-tabPanel header="Pacientes por mes">
+        <div class="field col-6">
+            <p-card header="Ingreso de nuevos empleados por mes">
+                <p-chart type="bar" [data]="dataNewEmployee" [options]="basicOptions"></p-chart>
+            </p-card>
+        </div>
+    </p-tabPanel>
+    <p-tabPanel header="Enfermedades por mes">
+        <div class="field col-6">
+            <p-card header="Ingreso de nuevos empleados por mes">
+                <p-chart type="bar" [data]="dataNewEmployee" [options]="basicOptions"></p-chart>
+            </p-card>
+        </div>
+    </p-tabPanel>
+</p-tabView>

@@ -1,0 +1,86 @@
+<div class="p-fluid p-formgrid grid px-4">
+    <div class="field col-3 pt-4 flex align-items-center gap-1">
+        <label for="searchSpecificEmployee">Buscar un empleado en especifico:</label>
+        <p-checkbox [(ngModel)]="viewAllEmployees" [binary]="true" inputId="searchSpecificEmployee"></p-checkbox>
+        
+    </div>
+    <div class="field col-3 pt-4" *ngIf="viewAllEmployees" >
+        <p-inputNumber 
+        placeholder="Ingrese número de empleado" 
+        
+        [(ngModel)]="employeeNumber" 
+        mode="decimal" 
+        inputId="withoutgrouping" 
+        [useGrouping]="false" 
+        class="pt-2"> </p-inputNumber>
+    </div>
+    <div class="field col-3 pt-5">
+        <p-button label="Buscar empleados" styleClass="p-button-success" icon="pi pi-search"></p-button>
+    </div>
+    <div class="field col-3"></div>
+    <div class="field col-12">
+        <p-table [value]="dataEmployees" dataKey="id" editMode="row" [tableStyle]="{'min-width': '50rem'}">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th style="width:20%; text-align: center;">Número de empleado</th>
+                    <th style="width:20%; text-align: center;">Nombre completo</th>
+                    <th style="width:20%; text-align: center;">Rol</th>
+                    <th style="width:20%; text-align: center;">Área</th>
+                    <th style="width:20%; text-align: center;">Editar/Eliminar</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-product let-editing="editing" let-ri="rowIndex">
+                <tr [pEditableRow]="product">
+                    <td style="text-align: center;">
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="product.id">
+                            </ng-template>  
+                            <ng-template pTemplate="output">
+                                {{product.id}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td style="text-align: center;">
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="product.name">
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{product.name}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td style="text-align: center;">
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{product.role}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td style="text-align: center;">
+                        <p-cellEditor>
+                            <ng-template pTemplate="input">
+                                <input pInputText type="text" [(ngModel)]="product.area">
+                            </ng-template>
+                            <ng-template pTemplate="output">
+                                {{product.area}}
+                            </ng-template>
+                        </p-cellEditor>
+                    </td>
+                    <td>
+                        <div class="flex align-items-center justify-content-center gap-2">
+                            <button pTooltip="Editar Registro" *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(product)" class="p-button-rounded p-button-text"></button>
+                            <button pTooltip="Eliminar Registro" *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-times" (click)="onRowEditInit(product)" class="p-button-rounded p-button-text p-button-danger"></button>
+                            <button pTooltip="Guardar cambios" *ngIf="editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check" (click)="onRowEditSave(product)" class="p-button-rounded p-button-text p-button-success mr-2"></button>
+                            <button pTooltip="Cancelar cambios" *ngIf="editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times" (click)="onRowEditCancel(product, ri)" class="p-button-rounded p-button-text p-button-danger"></button>
+                        </div>
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>
